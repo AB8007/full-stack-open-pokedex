@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import LoadingSpinner from './LoadingSpinner'
@@ -35,13 +34,12 @@ const PokemonPage = ({ previous, next }) => {
     (ability) => ability.is_hidden === true
   )
 
-  console.log('hiddenAbility=', hiddenAbility)
   return (
     <>
       <div className="links">
         {previous && <Link to={`/pokemon/${previous.name}`}>Previous</Link>}
         <Link to="/">Home</Link>
-        {next && <Link to={`/pokemon/${previous.name}`}>Next</Link>}
+        {next && <Link to={`/pokemon/${next.name}`}>Next</Link>}
       </div>
       <div className={`pokemon-page pokemon-type-${type.name}`}>
         <div
